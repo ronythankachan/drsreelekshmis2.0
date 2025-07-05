@@ -1,0 +1,18 @@
+version: "3"
+services:
+  ui:
+    build:
+      context: clinic-site/
+      dockerfile: Dockerfile
+    volumes:
+      - ./clinic-site/src:/app/src
+    ports:
+      - "3000:3000"
+  backend:
+    build: 
+      context: clinic-site-backend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./clinic-site-backend:/app/
+    ports: 
+      - "8001:8001"
