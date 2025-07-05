@@ -2,17 +2,17 @@ version: "3"
 services:
   ui:
     build:
-      context: clinic-site/
+      context: frontend/
       dockerfile: Dockerfile
     volumes:
-      - ./clinic-site/src:/app/src
+      - ./frontend/src:/app/src
     ports:
       - "3000:3000"
   backend:
-    build: 
-      context: clinic-site-backend/
+    build:
+      context: backend/
       dockerfile: Dockerfile
     volumes:
-      - ./clinic-site-backend:/app/
-    ports: 
+      - ./backend:/app/
+    ports:
       - "8001:8001"
